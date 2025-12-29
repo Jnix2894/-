@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 테스트</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+            background: #001122;
+            color: white;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .image-test {
+            margin: 2rem 0;
+            padding: 1rem;
+            border: 1px solid #00ccff;
+            border-radius: 10px;
+        }
+        img, video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .error {
+            color: #ff3333;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>서브노티카 생물 이미지 테스트</h1>
+        
+        <div class="image-test">
+            <h3>리퍼 레비아탄 (비디오)</h3>
+            <video controls muted loop>
+                <source src="images/리퍼 레비아탄.mp4" type="video/mp4">
+                비디오를 로드할 수 없습니다.
+            </video>
+        </div>
+        
+        <div class="image-test">
+            <h3>해룡 레비아탄 (이미지)</h3>
+            <img src="images/해룡 레비아탄.webp" alt="해룡 레비아탄" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="error" style="display:none;">이미지를 로드할 수 없습니다: images/해룡 레비아탄.webp</div>
+        </div>
+        
+        <div class="image-test">
+            <h3>유령 레비아탄 (이미지)</h3>
+            <img src="images/유령 레비아탄.webp" alt="유령 레비아탄" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="error" style="display:none;">이미지를 로드할 수 없습니다: images/유령 레비아탄.webp</div>
+        </div>
+        
+        <div class="image-test">
+            <h3>피퍼 (이미지)</h3>
+            <img src="images/피퍼.webp" alt="피퍼" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="error" style="display:none;">이미지를 로드할 수 없습니다: images/피퍼.webp</div>
+        </div>
+        
+        <div class="image-test">
+            <h3>게오징어 (이미지)</h3>
+            <img src="images/게오징어.webp" alt="게오징어" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="error" style="display:none;">이미지를 로드할 수 없습니다: images/게오징어.webp</div>
+        </div>
+        
+        <h2>이미지 폴더 내용 확인</h2>
+        <p>다음 파일들이 images/ 폴더에 있어야 합니다:</p>
+        <ul>
+            <li>리퍼 레비아탄.mp4</li>
+            <li>해룡 레비아탄.webp</li>
+            <li>유령 레비아탄.webp</li>
+            <li>피퍼.webp</li>
+            <li>게오징어.webp</li>
+            <li>모래상어.webp</li>
+            <li>동굴벌레.webp</li>
+            <li>뼈상어.webp</li>
+            <li>추적자.webp</li>
+            <li>공간도약자.webp</li>
+            <li>산호등 레비아탄.webp</li>
+            <li>바다황제 레비아탄.webp</li>
+            <li>폭파고기.webp</li>
+            <li>메스머.webp</li>
+        </ul>
+    </div>
+</body>
+</html>

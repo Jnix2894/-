@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subnautica 서브노티카 팬사이트</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero-section">
+        <div class="ocean-background">
+            <div class="bubbles">
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+            </div>
+            <div class="hero-overlay">
+                <h1><span class="sub-orange">SUB</span><span class="nautica-white">NAUTICA</span></h1>
+                <p>깊은 바다의 신비를 탐험하세요</p>
+                <div class="hero-buttons">
+                    <a href="#home" class="btn-primary">탐험 시작</a>
+                    <button class="btn-secondary">생존 가이드</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navigation">
+        <ul>
+            <li><a href="#home">🏠 홈</a></li>
+            <li><a href="#biomes">🌊 생물군계</a></li>
+            <li><a href="#creatures">🐠 생물</a></li>
+            <li><a href="#crafting">🔧 제작</a></li>
+            <li><a href="#vehicles">🚗 탈것</a></li>
+            <li><a href="#guides">📖 가이드</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="home" class="content-section">
+            <h2>서브노티카란?</h2>
+            <p>외계 행성 4546B의 광활한 바다에서 생존하며, 신비로운 수중 세계를 탐험하는 오픈월드 생존 게임입니다.</p>
+            
+            <div class="story-section">
+                <h3>🌊 스토리</h3>
+                <p>당신은 우주선 오로라호의 승무원으로, 행성 4546B 근처에서 원인불명의 추락사고를 당합니다. 
+                유일한 생존자가 된 당신은 구명정으로 탈출하지만, 이 행성은 99%가 바다로 이루어진 수중 세계였습니다.</p>
+                
+                <p>산소와 식량이 부족한 상황에서 당신은 바다 속에서 생존해야 합니다. 
+                하지만 이 바다는 단순한 물이 아닙니다. 아름답고 신비로운 해양 생물들과 위험한 포식자들이 공존하는 미지의 세계입니다.</p>
+                
+                <div class="story-highlights">
+                    <div class="highlight-item">
+                        <h4>🚀 추락한 우주선</h4>
+                        <p>오로라호의 잔해에서 중요한 자원과 단서를 찾아보세요</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>🏠 수중 기지 건설</h4>
+                        <p>바다 속에 안전한 피난처를 만들고 확장하세요</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>🔍 행성의 비밀</h4>
+                        <p>4546B 행성에 숨겨진 고대 문명의 흔적을 발견하세요</p>
+                    </div>
+                </div>
+                
+                <p class="story-conclusion">
+                    과연 당신은 이 신비로운 바다에서 살아남아 집으로 돌아갈 수 있을까요? 
+                    깊은 바다 속에서 펼쳐지는 생존과 탐험의 여정이 시작됩니다.
+                </p>
+            </div>
+        </section>
+
+        <section class="game-features">
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🌊 수중 탐험</h3>
+                    <p>깊은 바다의 다양한 생물군계를 탐험하세요</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🐟 해양 생물</h3>
+                    <p>아름답고 위험한 외계 해양 생물들을 만나보세요</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🏗️ 기지 건설</h3>
+                    <p>바다 속에 나만의 기지를 건설하고 확장하세요</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🚀 탈것 제작</h3>
+                    <p>시모스, 사이클롭스 등 다양한 잠수함을 제작하세요</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="biomes" class="content-section">
+            <h2>생물군계 탐험</h2>
+            <p>4546B 행성의 다양한 생물군계를 탐험하고 각 지역의 특징을 알아보세요.</p>
+            
+            <div class="biome-filter-tabs">
+                <button class="biome-filter-btn active" data-filter="all">전체</button>
+                <button class="biome-filter-btn" data-filter="안전">안전</button>
+                <button class="biome-filter-btn" data-filter="주의">주의</button>
+                <button class="biome-filter-btn" data-filter="위험">위험</button>
+                <button class="biome-filter-btn" data-filter="극위험">극위험</button>
+            </div>
+            
+            <div id="biomes-grid" class="biomes-display">
+                <!-- 생물군계들이 여기에 동적으로 추가됩니다 -->
+            </div>
+            
+            <div class="show-more-container">
+                <button id="show-more-biomes-btn" class="show-more-btn">더 많은 생물군계 보기 (<span id="hidden-biomes-count">0</span>개)</button>
+            </div>
+        </section>
+
+        <section id="creatures" class="content-section">
+            <h2>해양 생물 도감</h2>
+            <p>4546B 행성의 신비로운 해양 생물들을 만나보세요.</p>
+            
+            <div class="creature-filter-tabs">
+                <button class="filter-btn active" data-filter="all">전체</button>
+                <button class="filter-btn" data-filter="포식자">포식자</button>
+                <button class="filter-btn" data-filter="초식동물">초식동물</button>
+                <button class="filter-btn" data-filter="중성">중성</button>
+            </div>
+            
+            <div id="creatures-grid" class="creatures-display">
+                <!-- 생물들이 여기에 동적으로 추가됩니다 -->
+            </div>
+            
+            <div class="show-more-container">
+                <button id="show-more-btn" class="show-more-btn">더 많은 생물 보기 (<span id="hidden-count">0</span>개)</button>
+            </div>
+        </section>
+        <section class="depth-zones">
+            <h2>깊이별 구역</h2>
+            <div class="zones-grid">
+                <div class="zone-card safe">
+                    <h3>안전 얕은 곳 (0-200m)</h3>
+                    <p>시작 지역으로 비교적 안전한 구역</p>
+                </div>
+                <div class="zone-card caution">
+                    <h3>켈프 숲 (200-500m)</h3>
+                    <p>거대한 해조류가 자라는 신비로운 구역</p>
+                </div>
+                <div class="zone-card danger">
+                    <h3>대암초 지역 (300-600m)</h3>
+                    <p>유령 레비아탄이 서식하는 극도로 위험한 구역</p>
+                </div>
+                <div class="zone-card danger">
+                    <h3>핏빛 해초 숲 (400-700m)</h3>
+                    <p>붉은 해초와 크랩스퀴드가 있는 위험 구역</p>
+                </div>
+                <div class="zone-card extreme">
+                    <h3>잃어버린 강 (800-1200m)</h3>
+                    <p>유령 레비아탄 아성체들이 서식하는 극한 지역</p>
+                </div>
+                <div class="zone-card extreme">
+                    <h3>용암 지대 (1200m+)</h3>
+                    <p>해룡 레비아탄이 지배하는 최심부 용암 구역</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="disclaimer">
+                <h3>⚠️ 주의사항</h3>
+                <p>이 사이트의 정보는 팬이 제작한 것으로, 일부 내용이 부정확하거나 최신 게임 버전과 다를 수 있습니다. 정확한 정보는 공식 게임을 통해 확인해주세요.</p>
+            </div>
+            
+            <div class="purchase-info">
+                <h3>🎮 서브노티카 구매하기</h3>
+                <div class="purchase-links">
+                    <a href="https://store.steampowered.com/app/264710/Subnautica/" target="_blank" class="purchase-btn steam">
+                        <span class="platform">Steam</span>
+                        <span class="price">₩30,500</span>
+                    </a>
+                    <a href="https://www.epicgames.com/store/ko/p/subnautica" target="_blank" class="purchase-btn epic">
+                        <span class="platform">Epic Games</span>
+                        <span class="price">₩30,500</span>
+                    </a>
+                    <a href="https://www.xbox.com/ko-kr/games/store/subnautica/bt9l5dxp2d6x" target="_blank" class="purchase-btn xbox">
+                        <span class="platform">Xbox</span>
+                        <span class="price">₩30,500</span>
+                    </a>
+                    <a href="https://store.playstation.com/ko-kr/product/EP4064-CUSA10862_00-SUBNAUTICA000000" target="_blank" class="purchase-btn playstation">
+                        <span class="platform">PlayStation</span>
+                        <span class="price">₩30,500</span>
+                    </a>
+                    <a href="https://www.nintendo.com/kr/titles/70010000027360/" target="_blank" class="purchase-btn nintendo">
+                        <span class="platform">Nintendo Switch</span>
+                        <span class="price">₩30,500</span>
+                    </a>
+                </div>
+                <p class="price-note">* 가격은 변동될 수 있으며, 할인 이벤트를 확인해보세요!</p>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Subnautica 팬사이트. 깊은 바다의 모든 비밀을 탐험하세요.</p>
+                <p class="copyright-note">Subnautica는 Unknown Worlds Entertainment의 상표입니다.</p>
+            </div>
+        </div>
+        
+        <!-- 임시 이미지 업데이트 버튼 (개발용) -->
+        <button onclick="forceUpdateCreatureImages()" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #ff9900; color: white; border: none; border-radius: 5px; cursor: pointer;">이미지 데이터 업데이트</button>
+    </footer>
+    
+    <!-- 생물군계 상세 정보 모달 -->
+    <div id="biomeDetailModal" class="creature-modal">
+        <div class="creature-modal-content">
+            <div class="creature-modal-header">
+                <h2 id="modalBiomeName">생물군계 이름</h2>
+                <span class="creature-modal-close" onclick="closeBiomeModal()">&times;</span>
+            </div>
+            <div class="creature-modal-body">
+                <div class="creature-modal-image">
+                    <div id="modalBiomeImageContainer" class="image-container">
+                        <img id="modalBiomeImage" src="" alt="" style="display: none;">
+                        <video id="modalBiomeVideo" controls muted loop style="display: none;">
+                            <source src="" type="video/mp4">
+                        </video>
+                        <div id="modalBiomeImagePlaceholder" class="image-placeholder">
+                            <p>생물군계 이미지</p>
+                            <small>이미지를 불러오는 중입니다...</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="creature-modal-info">
+                    <div class="creature-info-row">
+                        <div id="modalBiomeDepth" class="biome-modal-depth">수심: 0-50m</div>
+                        <div class="biome-modal-danger" id="modalBiomeDanger">위험도: 안전</div>
+                    </div>
+                    <div class="creature-modal-description" id="modalBiomeDescription">
+                        생물군계에 대한 상세한 설명이 여기에 표시됩니다.
+                    </div>
+                    <div class="biome-details">
+                        <div class="biome-detail-section">
+                            <h4>서식 생물</h4>
+                            <div id="modalBiomeCreatures" class="creature-list">
+                                <!-- 생물 태그들이 여기에 표시됩니다 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 생물 상세 정보 모달 -->
+    <div id="creatureDetailModal" class="creature-modal">
+        <div class="creature-modal-content">
+            <div class="creature-modal-header">
+                <h2 id="modalCreatureName">생물 이름</h2>
+                <span class="creature-modal-close" onclick="closeCreatureModal()">&times;</span>
+            </div>
+            <div class="creature-modal-body">
+                <div class="creature-modal-image">
+                    <div id="modalImageContainer" class="image-container">
+                        <img id="modalCreatureImage" src="" alt="" style="display: none;">
+                        <video id="modalCreatureVideo" controls muted loop style="display: none;">
+                            <source src="" type="video/mp4">
+                        </video>
+                        <div id="modalImagePlaceholder" class="image-placeholder">
+                            <p>생물 이미지</p>
+                            <small>이미지를 불러오는 중입니다...</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="creature-modal-info">
+                    <div class="creature-info-row">
+                        <div class="creature-modal-danger" id="modalCreatureDanger">위험도: 안전</div>
+                        <div class="creature-modal-type" id="modalCreatureType">유형: 초식동물</div>
+                    </div>
+                    <div class="creature-modal-description" id="modalCreatureDescription">
+                        생물에 대한 상세한 설명이 여기에 표시됩니다.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>

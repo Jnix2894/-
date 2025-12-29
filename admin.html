@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subnautica 관리자 페이지</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <header class="admin-header">
+            <div class="header-content">
+                <h1><span class="sub-orange">SUB</span><span class="nautica-white">NAUTICA</span> 관리자</h1>
+                <div class="admin-info">
+                    <span>관리자: Admin</span>
+                    <button class="logout-btn">로그아웃</button>
+                </div>
+            </div>
+        </header>
+
+        <nav class="admin-nav">
+            <ul>
+                <li><a href="#dashboard" class="nav-link active">📊 대시보드</a></li>
+                <li><a href="#content" class="nav-link">📝 콘텐츠 관리</a></li>
+                <li><a href="#users" class="nav-link">👥 사용자 관리</a></li>
+                <li><a href="#creatures" class="nav-link">🐠 생물 관리</a></li>
+                <li><a href="#biomes" class="nav-link">🌊 생물군계 관리</a></li>
+                <li><a href="#settings" class="nav-link">⚙️ 설정</a></li>
+            </ul>
+        </nav>
+
+        <main class="admin-main">
+            <!-- 대시보드 섹션 -->
+            <section id="dashboard" class="admin-section active">
+                <h2>대시보드</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-info">
+                            <h3>총 사용자</h3>
+                            <p class="stat-number">1,247</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📝</div>
+                        <div class="stat-info">
+                            <h3>게시글</h3>
+                            <p class="stat-number">89</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🐠</div>
+                        <div class="stat-info">
+                            <h3>등록된 생물</h3>
+                            <p class="stat-number">156</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📈</div>
+                        <div class="stat-info">
+                            <h3>오늘 방문자</h3>
+                            <p class="stat-number">342</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h3>최근 활동</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <span class="activity-time">10분 전</span>
+                            <span class="activity-desc">새로운 사용자 'DeepDiver123'이 가입했습니다</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-time">1시간 전</span>
+                            <span class="activity-desc">리퍼 리바이어던 정보가 업데이트되었습니다</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-time">3시간 전</span>
+                            <span class="activity-desc">새로운 가이드 '용암지대 탐험법'이 게시되었습니다</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 콘텐츠 관리 섹션 -->
+            <section id="content" class="admin-section">
+                <h2>콘텐츠 관리</h2>
+                <div class="content-actions">
+                    <button class="btn-primary">새 게시글 작성</button>
+                    <button class="btn-secondary">카테고리 관리</button>
+                </div>
+                <div class="content-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>제목</th>
+                                <th>작성자</th>
+                                <th>카테고리</th>
+                                <th>작성일</th>
+                                <th>상태</th>
+                                <th>관리</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>용암지대 탐험 완벽 가이드</td>
+                                <td>Admin</td>
+                                <td>가이드</td>
+                                <td>2024-12-29</td>
+                                <td><span class="status published">게시됨</span></td>
+                                <td>
+                                    <button class="btn-edit">수정</button>
+                                    <button class="btn-delete">삭제</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>새로운 생물 발견 소식</td>
+                                <td>Admin</td>
+                                <td>뉴스</td>
+                                <td>2024-12-28</td>
+                                <td><span class="status draft">임시저장</span></td>
+                                <td>
+                                    <button class="btn-edit">수정</button>
+                                    <button class="btn-delete">삭제</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 사용자 관리 섹션 -->
+            <section id="users" class="admin-section">
+                <h2>사용자 관리</h2>
+                <div class="user-search">
+                    <input type="text" placeholder="사용자 검색..." class="search-input">
+                    <button class="btn-search">검색</button>
+                </div>
+                <div class="user-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>사용자명</th>
+                                <th>이메일</th>
+                                <th>가입일</th>
+                                <th>상태</th>
+                                <th>관리</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>DeepDiver123</td>
+                                <td>diver@example.com</td>
+                                <td>2024-12-29</td>
+                                <td><span class="status active">활성</span></td>
+                                <td>
+                                    <button class="btn-edit">수정</button>
+                                    <button class="btn-ban">정지</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>OceanExplorer</td>
+                                <td>ocean@example.com</td>
+                                <td>2024-12-28</td>
+                                <td><span class="status active">활성</span></td>
+                                <td>
+                                    <button class="btn-edit">수정</button>
+                                    <button class="btn-ban">정지</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 생물군계 관리 섹션 -->
+            <section id="biomes" class="admin-section">
+                <h2>생물군계 관리</h2>
+                <div class="creature-actions">
+                    <button class="btn-primary" onclick="openAddBiomeModal()">새 생물군계 추가</button>
+                    <button class="btn-secondary" onclick="renderAdminBiomes()">새로고침</button>
+                    <button class="btn-secondary" onclick="forceRenderBiomes()">강제렌더링</button>
+                    <button class="btn-secondary" onclick="debugBiomes()">디버그</button>
+                    <button class="btn-secondary" onclick="resetBiomeData()">초기화</button>
+                    <button class="btn-warning" onclick="forceUpdateBiomeImages()">이미지 데이터 업데이트</button>
+                </div>
+                
+                <div class="admin-filter-tabs">
+                    <button class="admin-biome-filter-btn active" data-filter="all">전체</button>
+                    <button class="admin-biome-filter-btn" data-filter="안전">안전</button>
+                    <button class="admin-biome-filter-btn" data-filter="주의">주의</button>
+                    <button class="admin-biome-filter-btn" data-filter="위험">위험</button>
+                    <button class="admin-biome-filter-btn" data-filter="극위험">극위험</button>
+                </div>
+                
+                <div id="admin-biomes-grid" class="creature-grid">
+                    <!-- 생물군계 카드들이 여기에 동적으로 추가됩니다 -->
+                </div>
+            </section>
+
+            <!-- 생물 관리 섹션 -->
+            <section id="creatures" class="admin-section">
+                <h2>생물 관리</h2>
+                <div class="creature-actions">
+                    <button class="btn-primary" onclick="openAddCreatureModal()">새 생물 추가</button>
+                    <button class="btn-secondary" onclick="renderAdminCreatures()">새로고침</button>
+                    <button class="btn-secondary" onclick="forceRenderCreatures()">강제렌더링</button>
+                    <button class="btn-secondary" onclick="debugCreatures()">디버그</button>
+                    <button class="btn-secondary" onclick="resetCreatureData()">초기화</button>
+                    <button class="btn-warning" onclick="forceUpdateImages()">이미지 데이터 업데이트</button>
+                </div>
+                
+                <div class="admin-filter-tabs">
+                    <button class="admin-filter-btn active" data-filter="all">전체</button>
+                    <button class="admin-filter-btn" data-filter="포식자">포식자</button>
+                    <button class="admin-filter-btn" data-filter="초식동물">초식동물</button>
+                    <button class="admin-filter-btn" data-filter="중성">중성</button>
+                </div>
+                <div class="creature-grid" id="admin-creatures-grid">
+                    <!-- 생물들이 JavaScript로 동적 생성됩니다 -->
+                </div>
+            </section>
+
+            <!-- 생물군계 수정 모달 -->
+            <div id="editBiomeModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>생물군계 정보 수정</h3>
+                        <span class="close" onclick="closeEditBiomeModal()">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editBiomeForm">
+                            <div class="form-group">
+                                <label for="biomeName">생물군계 이름</label>
+                                <input type="text" id="biomeName" name="biomeName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="biomeEmoji">이미지 (이모지)</label>
+                                <input type="text" id="biomeEmoji" name="biomeEmoji" placeholder="🏝️" maxlength="2">
+                                <small>이모지를 입력하거나 아래에서 선택하세요</small>
+                            </div>
+                            
+                            <div class="emoji-selector">
+                                <div class="emoji-grid">
+                                    <span class="emoji-option" onclick="selectBiomeEmoji('🏝️')">🏝️</span>
+                                    <span class="emoji-option" onclick="selectBiomeEmoji('🌿')">🌿</span>
+                                    <span class="emoji-option" onclick="selectBiomeEmoji('🌾')">🌾</span>
+                                    <span class="emoji-option" onclick="selectBiomeEmoji('🍄')">🍄</span>
+                                    <span class="emoji-option" onclick="selectBiomeEmoji('🪨')">🪨</span>
+                                    <span class="emoji-option" onclick="selectBiomeEmoji('🕳️')">🕳️</span>
+                                    <span class="emoji-option" onclick="selectBiomeEmoji('🌋')">🌋</span>
+                                    <span class="emoji-option" onclick="selectBiomeEmoji('🌊')">🌊</span>
+                                    <span class="emoji-option" onclick="selectBiomeEmoji('🩸')">🩸</span>
+                                    <span class="emoji-option" onclick="selectBiomeEmoji('🏔️')">🏔️</span>
+                                    <span class="emoji-option" onclick="selectBiomeEmoji('🌑')">🌑</span>
+                                    <span class="emoji-option" onclick="selectBiomeEmoji('❄️')">❄️</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="biomeDepth">수심</label>
+                                <input type="text" id="biomeDepth" name="biomeDepth" placeholder="0-50m" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="biomeDanger">위험도</label>
+                                <select id="biomeDanger" name="biomeDanger" required>
+                                    <option value="안전">안전</option>
+                                    <option value="주의">주의</option>
+                                    <option value="위험">위험</option>
+                                    <option value="극위험">극위험</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="biomeDescription">설명</label>
+                                <textarea id="biomeDescription" name="biomeDescription" rows="4" required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="biomeCreatures">서식 생물 (쉼표로 구분)</label>
+                                <textarea id="biomeCreatures" name="biomeCreatures" rows="3" placeholder="피퍼, 부레고기, 가소포드"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="biomeImage">이미지 경로</label>
+                                <input type="text" id="biomeImage" name="biomeImage" placeholder="images/생물군계이름.webp">
+                                <small>이미지 파일 경로를 입력하세요</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="biomeIsVideo">미디어 타입</label>
+                                <select id="biomeIsVideo" name="biomeIsVideo">
+                                    <option value="false">이미지 (.webp)</option>
+                                    <option value="true">비디오 (.mp4)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="modal-actions">
+                                <button type="button" class="btn-secondary" onclick="closeEditBiomeModal()">취소</button>
+                                <button type="submit" class="btn-primary">저장</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 새 생물군계 추가 모달 -->
+            <div id="addBiomeModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>새 생물군계 추가</h3>
+                        <span class="close" onclick="closeAddBiomeModal()">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addBiomeForm">
+                            <div class="form-group">
+                                <label for="newBiomeName">생물군계 이름</label>
+                                <input type="text" id="newBiomeName" name="biomeName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="newBiomeEmoji">이미지 (이모지)</label>
+                                <input type="text" id="newBiomeEmoji" name="biomeEmoji" placeholder="🏝️" maxlength="2">
+                                <small>이모지를 입력하거나 아래에서 선택하세요</small>
+                            </div>
+                            
+                            <div class="emoji-selector">
+                                <div class="emoji-grid">
+                                    <span class="emoji-option" onclick="selectEmojiForAddBiome('🏝️')">🏝️</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAddBiome('🌿')">🌿</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAddBiome('🌾')">🌾</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAddBiome('🍄')">🍄</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAddBiome('🪨')">🪨</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAddBiome('🕳️')">🕳️</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAddBiome('🌋')">🌋</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAddBiome('🌊')">🌊</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAddBiome('🩸')">🩸</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAddBiome('🏔️')">🏔️</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAddBiome('🌑')">🌑</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAddBiome('❄️')">❄️</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="newBiomeDepth">수심</label>
+                                <input type="text" id="newBiomeDepth" name="biomeDepth" placeholder="0-50m" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="newBiomeDanger">위험도</label>
+                                <select id="newBiomeDanger" name="biomeDanger" required>
+                                    <option value="안전">안전</option>
+                                    <option value="주의">주의</option>
+                                    <option value="위험">위험</option>
+                                    <option value="극위험">극위험</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="newBiomeDescription">설명</label>
+                                <textarea id="newBiomeDescription" name="biomeDescription" rows="4" required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="newBiomeCreatures">서식 생물 (쉼표로 구분)</label>
+                                <textarea id="newBiomeCreatures" name="biomeCreatures" rows="3" placeholder="피퍼, 부레고기, 가소포드"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="newBiomeImage">이미지 경로</label>
+                                <input type="text" id="newBiomeImage" name="biomeImage" placeholder="images/생물군계이름.webp">
+                                <small>이미지 파일 경로를 입력하세요</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="newBiomeIsVideo">미디어 타입</label>
+                                <select id="newBiomeIsVideo" name="biomeIsVideo">
+                                    <option value="false">이미지 (.webp)</option>
+                                    <option value="true">비디오 (.mp4)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="modal-actions">
+                                <button type="button" class="btn-secondary" onclick="closeAddBiomeModal()">취소</button>
+                                <button type="submit" class="btn-primary">추가</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 생물 수정 모달 -->
+            <div id="editCreatureModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>생물 정보 수정</h3>
+                        <span class="close" onclick="closeEditModal()">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editCreatureForm">
+                            <div class="form-group">
+                                <label for="creatureName">생물 이름</label>
+                                <input type="text" id="creatureName" name="creatureName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="creatureEmoji">이미지 (이모지)</label>
+                                <input type="text" id="creatureEmoji" name="creatureEmoji" placeholder="🦈" maxlength="2">
+                                <small>이모지를 입력하거나 아래에서 선택하세요</small>
+                            </div>
+                            
+                            <div class="emoji-selector">
+                                <div class="emoji-grid">
+                                    <span class="emoji-option" onclick="selectEmoji('🦈')">🦈</span>
+                                    <span class="emoji-option" onclick="selectEmoji('🐟')">🐟</span>
+                                    <span class="emoji-option" onclick="selectEmoji('🐙')">🐙</span>
+                                    <span class="emoji-option" onclick="selectEmoji('🐠')">🐠</span>
+                                    <span class="emoji-option" onclick="selectEmoji('🐡')">🐡</span>
+                                    <span class="emoji-option" onclick="selectEmoji('🦑')">🦑</span>
+                                    <span class="emoji-option" onclick="selectEmoji('🐢')">🐢</span>
+                                    <span class="emoji-option" onclick="selectEmoji('🦀')">🦀</span>
+                                    <span class="emoji-option" onclick="selectEmoji('🦞')">🦞</span>
+                                    <span class="emoji-option" onclick="selectEmoji('🐚')">🐚</span>
+                                    <span class="emoji-option" onclick="selectEmoji('🪼')">🪼</span>
+                                    <span class="emoji-option" onclick="selectEmoji('🐋')">🐋</span>
+                                    <span class="emoji-option" onclick="selectEmoji('🐲')">🐲</span>
+                                    <span class="emoji-option" onclick="selectEmoji('👻')">👻</span>
+                                    <span class="emoji-option" onclick="selectEmoji('🦴')">🦴</span>
+                                    <span class="emoji-option" onclick="selectEmoji('🔍')">🔍</span>
+                                    <span class="emoji-option" onclick="selectEmoji('⚡')">⚡</span>
+                                    <span class="emoji-option" onclick="selectEmoji('🪸')">🪸</span>
+                                    <span class="emoji-option" onclick="selectEmoji('👑')">👑</span>
+                                    <span class="emoji-option" onclick="selectEmoji('💥')">💥</span>
+                                    <span class="emoji-option" onclick="selectEmoji('👁️')">👁️</span>
+                                    <span class="emoji-option" onclick="selectEmoji('🪱')">🪱</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="creatureDanger">위험도</label>
+                                <select id="creatureDanger" name="creatureDanger" required>
+                                    <option value="안전">안전</option>
+                                    <option value="주의">주의</option>
+                                    <option value="위험">위험</option>
+                                    <option value="극위험">극위험</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="creatureDescription">설명</label>
+                                <textarea id="creatureDescription" name="creatureDescription" rows="4" required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="creatureType">생물 유형</label>
+                                <select id="creatureType" name="creatureType" required>
+                                    <option value="포식자">포식자</option>
+                                    <option value="초식동물">초식동물</option>
+                                    <option value="중성">중성</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="creatureImage">이미지 경로</label>
+                                <input type="text" id="creatureImage" name="creatureImage" placeholder="images/생물이름.webp">
+                                <small>이미지 파일 경로를 입력하세요 (예: images/리퍼 레비아탄.mp4)</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="creatureIsVideo">미디어 타입</label>
+                                <select id="creatureIsVideo" name="creatureIsVideo">
+                                    <option value="false">이미지 (.webp)</option>
+                                    <option value="true">비디오 (.mp4)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="modal-actions">
+                                <button type="button" class="btn-secondary" onclick="closeEditModal()">취소</button>
+                                <button type="submit" class="btn-primary">저장</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 새 생물 추가 모달 -->
+            <div id="addCreatureModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>새 생물 추가</h3>
+                        <span class="close" onclick="closeAddModal()">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addCreatureForm">
+                            <div class="form-group">
+                                <label for="newCreatureName">생물 이름</label>
+                                <input type="text" id="newCreatureName" name="creatureName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="newCreatureEmoji">이미지 (이모지)</label>
+                                <input type="text" id="newCreatureEmoji" name="creatureEmoji" placeholder="🦈" maxlength="2">
+                                <small>이모지를 입력하거나 아래에서 선택하세요</small>
+                            </div>
+                            
+                            <div class="emoji-selector">
+                                <div class="emoji-grid">
+                                    <span class="emoji-option" onclick="selectEmojiForAdd('🦈')">🦈</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAdd('🐟')">🐟</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAdd('🐙')">🐙</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAdd('🐠')">🐠</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAdd('🐡')">🐡</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAdd('🦑')">🦑</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAdd('🐢')">🐢</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAdd('🦀')">🦀</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAdd('🦞')">🦞</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAdd('🐚')">🐚</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAdd('🪼')">🪼</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAdd('🐋')">🐋</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAdd('🐲')">🐲</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAdd('👻')">👻</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAdd('🦴')">🦴</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAdd('🔍')">🔍</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAdd('⚡')">⚡</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAdd('🪸')">🪸</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAdd('👑')">👑</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAdd('💥')">💥</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAdd('👁️')">👁️</span>
+                                    <span class="emoji-option" onclick="selectEmojiForAdd('🪱')">🪱</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="newCreatureDanger">위험도</label>
+                                <select id="newCreatureDanger" name="creatureDanger" required>
+                                    <option value="안전">안전</option>
+                                    <option value="주의">주의</option>
+                                    <option value="위험">위험</option>
+                                    <option value="극위험">극위험</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="newCreatureDescription">설명</label>
+                                <textarea id="newCreatureDescription" name="creatureDescription" rows="4" required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="newCreatureType">생물 유형</label>
+                                <select id="newCreatureType" name="creatureType" required>
+                                    <option value="포식자">포식자</option>
+                                    <option value="초식동물">초식동물</option>
+                                    <option value="중성">중성</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="newCreatureImage">이미지 경로</label>
+                                <input type="text" id="newCreatureImage" name="creatureImage" placeholder="images/생물이름.webp">
+                                <small>이미지 파일 경로를 입력하세요 (예: images/리퍼 레비아탄.mp4)</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="newCreatureIsVideo">미디어 타입</label>
+                                <select id="newCreatureIsVideo" name="creatureIsVideo">
+                                    <option value="false">이미지 (.webp)</option>
+                                    <option value="true">비디오 (.mp4)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="modal-actions">
+                                <button type="button" class="btn-secondary" onclick="closeAddModal()">취소</button>
+                                <button type="submit" class="btn-primary">추가</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 설정 섹션 -->
+            <section id="settings" class="admin-section">
+                <h2>시스템 설정</h2>
+                <div class="settings-form">
+                    <div class="setting-group">
+                        <label>사이트 제목</label>
+                        <input type="text" value="Subnautica 팬사이트" class="setting-input">
+                    </div>
+                    <div class="setting-group">
+                        <label>사이트 설명</label>
+                        <textarea class="setting-textarea">깊은 바다의 신비를 탐험하는 서브노티카 팬사이트</textarea>
+                    </div>
+                    <div class="setting-group">
+                        <label>유지보수 모드</label>
+                        <input type="checkbox" class="setting-checkbox">
+                    </div>
+                    <button class="btn-primary">설정 저장</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

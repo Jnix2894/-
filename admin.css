@@ -1,0 +1,682 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #001122 0%, #003366 50%, #004488 100%);
+    color: #fff;
+    min-height: 100vh;
+}
+
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 헤더 */
+.admin-header {
+    background: rgba(0, 17, 34, 0.9);
+    padding: 1rem 2rem;
+    border-bottom: 2px solid #00ccff;
+    backdrop-filter: blur(10px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.admin-header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.sub-orange {
+    color: #ff6600;
+    text-shadow: 0 0 10px #ff6600;
+}
+
+.nautica-white {
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff;
+}
+
+.admin-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logout-btn {
+    background: #ff3333;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.logout-btn:hover {
+    background: #cc0000;
+}
+
+/* 네비게이션 */
+.admin-nav {
+    background: rgba(0, 34, 68, 0.9);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(0, 204, 255, 0.3);
+}
+
+.admin-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.nav-link {
+    color: #ccffff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: rgba(0, 204, 255, 0.2);
+    color: #00ccff;
+}
+
+/* 메인 콘텐츠 */
+.admin-main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.admin-section {
+    display: none;
+}
+
+.admin-section.active {
+    display: block;
+}
+
+.admin-section h2 {
+    color: #00ccff;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid rgba(0, 204, 255, 0.3);
+    padding-bottom: 0.5rem;
+}
+
+/* 통계 카드 */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: rgba(0, 34, 68, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 204, 255, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: #00ccff;
+}
+
+.stat-icon {
+    font-size: 3rem;
+}
+
+.stat-info h3 {
+    color: #ccffff;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-number {
+    color: #00ccff;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* 최근 활동 */
+.recent-activity {
+    background: rgba(0, 34, 68, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 204, 255, 0.3);
+}
+
+.recent-activity h3 {
+    color: #00ccff;
+    margin-bottom: 1.5rem;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.activity-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(0, 102, 204, 0.1);
+    border-radius: 5px;
+    border-left: 4px solid #00ccff;
+}
+
+.activity-time {
+    color: #ffcc99;
+    font-size: 0.9rem;
+    min-width: 80px;
+}
+
+.activity-desc {
+    color: #ccffff;
+}
+
+/* 버튼 스타일 */
+.btn-primary, .btn-secondary, .btn-edit, .btn-delete, .btn-ban, .btn-search {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #00ccff, #0099cc);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 204, 255, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #00ccff;
+    border: 2px solid #00ccff;
+}
+
+.btn-secondary:hover {
+    background: #00ccff;
+    color: white;
+}
+
+.btn-warning {
+    background: linear-gradient(45deg, #ff9900, #ffaa00);
+    color: white;
+    border: 2px solid #ff9900;
+    font-weight: bold;
+}
+
+.btn-warning:hover {
+    background: linear-gradient(45deg, #ffaa00, #ffbb00);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
+}
+
+.btn-edit {
+    background: #ffcc00;
+    color: #333;
+}
+
+.btn-edit:hover {
+    background: #ff9900;
+}
+
+.btn-delete, .btn-ban {
+    background: #ff3333;
+    color: white;
+}
+
+.btn-delete:hover, .btn-ban:hover {
+    background: #cc0000;
+}
+
+.btn-search {
+    background: #00ccff;
+    color: white;
+}
+
+/* 테이블 */
+.content-table, .user-table {
+    background: rgba(0, 34, 68, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 204, 255, 0.2);
+}
+
+th {
+    background: rgba(0, 102, 204, 0.3);
+    color: #00ccff;
+    font-weight: bold;
+}
+
+td {
+    color: #ccffff;
+}
+
+.status {
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.status.published, .status.active {
+    background: rgba(0, 255, 128, 0.2);
+    color: #00ff80;
+    border: 1px solid #00ff80;
+}
+
+.status.draft {
+    background: rgba(255, 204, 0, 0.2);
+    color: #ffcc00;
+    border: 1px solid #ffcc00;
+}
+
+/* 액션 버튼 그룹 */
+.content-actions, .creature-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+/* 관리자 필터 탭 */
+.admin-filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0 2rem 0;
+    flex-wrap: wrap;
+}
+
+.admin-filter-btn {
+    padding: 0.6rem 1.2rem;
+    border: 2px solid rgba(0, 204, 255, 0.3);
+    border-radius: 20px;
+    background: transparent;
+    color: #00ccff;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.admin-filter-btn:hover {
+    background: rgba(0, 204, 255, 0.2);
+    border-color: #00ccff;
+    transform: translateY(-2px);
+}
+
+.admin-filter-btn.active {
+    background: #00ccff;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 204, 255, 0.3);
+}
+
+/* 검색 */
+.user-search {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.search-input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 2px solid rgba(0, 204, 255, 0.3);
+    border-radius: 5px;
+    background: rgba(0, 34, 68, 0.8);
+    color: #fff;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #00ccff;
+}
+
+/* 생물 카드 */
+.creature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+#admin-creatures-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+    min-height: 200px;
+}
+
+.creature-card {
+    background: rgba(0, 34, 68, 0.8);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 204, 255, 0.3);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.creature-card:hover {
+    transform: translateY(-5px);
+    border-color: #00ccff;
+}
+
+.creature-image {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.creature-card h4 {
+    color: #00ccff;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.creature-card p {
+    color: #ccffff;
+    margin-bottom: 0.5rem;
+}
+
+.biome-creatures {
+    font-size: 0.8rem !important;
+    color: #99ccff !important;
+    margin-top: 1rem !important;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(0, 204, 255, 0.2);
+}
+
+.creature-description {
+    font-size: 0.9rem;
+    color: #b3e6ff !important;
+    font-style: italic;
+    margin: 1rem 0 !important;
+    line-height: 1.4;
+}
+
+.creature-actions-small {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+/* 모달 스타일 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: linear-gradient(135deg, rgba(0, 34, 68, 0.95), rgba(0, 51, 102, 0.95));
+    margin: 5% auto;
+    padding: 0;
+    border: 2px solid #00ccff;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    background: rgba(0, 102, 204, 0.3);
+    padding: 1.5rem;
+    border-bottom: 2px solid rgba(0, 204, 255, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    color: #00ccff;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.close {
+    color: #ccffff;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #ff6600;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+/* 폼 스타일 */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: #00ccff;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid rgba(0, 204, 255, 0.3);
+    border-radius: 5px;
+    background: rgba(0, 17, 34, 0.8);
+    color: #fff;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #00ccff;
+    box-shadow: 0 0 10px rgba(0, 204, 255, 0.3);
+}
+
+.form-group small {
+    color: #b3e6ff;
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    display: block;
+}
+
+/* 이모지 선택기 */
+.emoji-selector {
+    margin: 1rem 0;
+}
+
+.emoji-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5rem;
+    background: rgba(0, 17, 34, 0.5);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 204, 255, 0.2);
+}
+
+.emoji-option {
+    font-size: 2rem;
+    padding: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s;
+    background: rgba(0, 34, 68, 0.5);
+}
+
+.emoji-option:hover {
+    background: rgba(0, 204, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.emoji-option.selected {
+    background: rgba(0, 204, 255, 0.5);
+    border: 2px solid #00ccff;
+}
+
+/* 모달 액션 버튼 */
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 204, 255, 0.3);
+}
+
+/* 설정 폼 */
+.settings-form {
+    background: rgba(0, 34, 68, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 204, 255, 0.3);
+    max-width: 600px;
+}
+
+.setting-group {
+    margin-bottom: 1.5rem;
+}
+
+.setting-group label {
+    display: block;
+    color: #00ccff;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.setting-input, .setting-textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid rgba(0, 204, 255, 0.3);
+    border-radius: 5px;
+    background: rgba(0, 17, 34, 0.8);
+    color: #fff;
+}
+
+.setting-textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.setting-input:focus, .setting-textarea:focus {
+    outline: none;
+    border-color: #00ccff;
+}
+
+.creature-filter {
+    padding: 0.5rem;
+    border: 2px solid rgba(0, 204, 255, 0.3);
+    border-radius: 5px;
+    background: rgba(0, 34, 68, 0.8);
+    color: #fff;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .admin-nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-main {
+        padding: 1rem;
+    }
+    
+    .content-actions, .creature-actions {
+        flex-direction: column;
+    }
+    
+    .user-search {
+        flex-direction: column;
+    }
+}

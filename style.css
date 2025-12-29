@@ -1,0 +1,1177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background: linear-gradient(180deg, #001122 0%, #003366 50%, #004488 100%);
+    min-height: 100vh;
+}
+
+/* 히어로 섹션 - 바다 배경 */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.ocean-background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        #0066cc 0%,
+        #004499 30%,
+        #002266 60%,
+        #001133 100%
+    );
+    animation: oceanWave 6s ease-in-out infinite;
+}
+
+@keyframes oceanWave {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* 물거품 애니메이션 */
+.bubbles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: bubble-rise 8s infinite linear;
+}
+
+.bubble:nth-child(1) {
+    width: 20px;
+    height: 20px;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+    width: 15px;
+    height: 15px;
+    left: 30%;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(3) {
+    width: 25px;
+    height: 25px;
+    left: 60%;
+    animation-delay: 4s;
+}
+
+.bubble:nth-child(4) {
+    width: 12px;
+    height: 12px;
+    left: 80%;
+    animation-delay: 6s;
+}
+
+.bubble:nth-child(5) {
+    width: 18px;
+    height: 18px;
+    left: 45%;
+    animation-delay: 1s;
+}
+
+@keyframes bubble-rise {
+    0% {
+        bottom: -100px;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        bottom: 100vh;
+        opacity: 0;
+    }
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
+}
+
+.hero-overlay h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    letter-spacing: 4px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.sub-orange {
+    color: #ff6600;
+    text-shadow: 0 0 20px #ff6600, 0 0 30px #ff6600, 0 0 40px #ff6600;
+}
+
+.nautica-white {
+    color: #ffffff;
+    text-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
+}
+
+@keyframes glow {
+    from { 
+        filter: brightness(1);
+    }
+    to { 
+        filter: brightness(1.2);
+    }
+}
+
+.hero-overlay p {
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: 2rem;
+    color: #ccffff;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #00ccff, #0099cc);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 204, 255, 0.3);
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 204, 255, 0.5);
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #00ccff;
+    border: 2px solid #00ccff;
+}
+
+.btn-secondary:hover {
+    background: #00ccff;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* 네비게이션 */
+.navigation {
+    background: rgba(0, 34, 68, 0.9);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.navigation a {
+    color: #ccffff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navigation a:hover {
+    background: rgba(0, 204, 255, 0.2);
+    color: #00ccff;
+}
+
+/* 메인 콘텐츠 */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.content-section {
+    background: rgba(0, 34, 68, 0.8);
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 204, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.content-section h2 {
+    color: #00ccff;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+/* 스토리 섹션 */
+.story-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid rgba(0, 204, 255, 0.3);
+}
+
+.story-section h3 {
+    color: #00ccff;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.story-section p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: #ccffff;
+    font-size: 1.1rem;
+}
+
+.story-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.highlight-item {
+    background: rgba(0, 102, 204, 0.2);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #00ccff;
+    transition: transform 0.3s ease;
+}
+
+.highlight-item:hover {
+    transform: translateX(5px);
+    background: rgba(0, 102, 204, 0.3);
+}
+
+.highlight-item h4 {
+    color: #00ccff;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.highlight-item p {
+    margin: 0;
+    font-size: 1rem;
+    color: #e6f7ff;
+}
+
+.story-conclusion {
+    background: rgba(255, 102, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 102, 0, 0.3);
+    font-style: italic;
+    text-align: center;
+    color: #ffcc99;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+}
+.game-features {
+    margin: 3rem 0;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: rgba(0, 34, 68, 0.8);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid rgba(0, 204, 255, 0.3);
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: #00ccff;
+    box-shadow: 0 10px 30px rgba(0, 204, 255, 0.2);
+}
+
+.feature-card h3 {
+    color: #00ccff;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* 깊이별 구역 */
+.depth-zones {
+    margin: 3rem 0;
+}
+
+.depth-zones h2 {
+    text-align: center;
+    color: #00ccff;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.zones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.zone-card {
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.zone-card.safe {
+    background: linear-gradient(135deg, rgba(0, 255, 128, 0.2), rgba(0, 204, 255, 0.2));
+    border: 2px solid #00ff80;
+}
+
+.zone-card.caution {
+    background: linear-gradient(135deg, rgba(255, 204, 0, 0.2), rgba(255, 153, 0, 0.2));
+    border: 2px solid #ffcc00;
+}
+
+.zone-card.danger {
+    background: linear-gradient(135deg, rgba(255, 51, 51, 0.2), rgba(204, 0, 0, 0.2));
+    border: 2px solid #ff3333;
+}
+
+.zone-card.extreme {
+    background: linear-gradient(135deg, rgba(139, 0, 139, 0.3), rgba(75, 0, 130, 0.3));
+    border: 2px solid #8b008b;
+    box-shadow: 0 0 20px rgba(139, 0, 139, 0.4);
+}
+
+.zone-card:hover {
+    transform: translateY(-5px);
+}
+
+.zone-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.zone-card.safe h3 { color: #00ff80; }
+.zone-card.caution h3 { color: #ffcc00; }
+.zone-card.danger h3 { color: #ff3333; }
+.zone-card.extreme h3 { color: #8b008b; }
+
+/* 생물군계 섹션 */
+.biome-filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.biome-filter-btn {
+    padding: 0.8rem 1.5rem;
+    border: 2px solid rgba(0, 204, 255, 0.3);
+    border-radius: 25px;
+    background: transparent;
+    color: #00ccff;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.biome-filter-btn:hover {
+    background: rgba(0, 204, 255, 0.2);
+    border-color: #00ccff;
+    transform: translateY(-2px);
+}
+
+.biome-filter-btn.active {
+    background: #00ccff;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 204, 255, 0.3);
+}
+
+.biomes-display {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    min-height: 200px;
+}
+
+.biome-item {
+    background: rgba(0, 34, 68, 0.8);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 204, 255, 0.3);
+    text-align: center;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+}
+
+.biome-item:hover {
+    transform: translateY(-8px);
+    border-color: #00ccff;
+    box-shadow: 0 15px 40px rgba(0, 204, 255, 0.3);
+    background: rgba(0, 51, 102, 0.9);
+}
+
+.biome-item:active {
+    transform: translateY(-5px);
+}
+
+.biome-item.hidden {
+    display: none;
+}
+
+.biome-item .biome-emoji {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.biome-item h3 {
+    color: #00ccff;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.biome-depth {
+    color: #99ccff;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    font-style: italic;
+}
+
+.biome-danger {
+    padding: 0.3rem 1rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    display: inline-block;
+}
+
+.biome-item p {
+    color: #ccffff;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+/* 생물군계 모달 스타일 */
+.biome-modal-depth {
+    background: rgba(0, 102, 204, 0.2);
+    padding: 1rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #00ccff;
+    border: 2px solid rgba(0, 204, 255, 0.3);
+    text-align: center;
+}
+
+.biome-modal-danger {
+    padding: 1rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid;
+}
+
+.biome-details {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.biome-detail-section h4 {
+    color: #00ccff;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.creature-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.creature-tag {
+    background: rgba(0, 102, 204, 0.3);
+    color: #ccffff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(0, 204, 255, 0.3);
+    transition: all 0.3s;
+    background: rgba(0, 255, 128, 0.3);
+    border-color: rgba(0, 255, 128, 0.5);
+    color: #ccffcc;
+}
+
+.creature-tag:hover {
+    background: rgba(0, 255, 128, 0.5);
+    transform: translateY(-2px);
+}
+
+/* 반응형 디자인 - 생물군계 모달 */
+@media (max-width: 768px) {
+    .biome-details {
+        margin-top: 1.5rem;
+    }
+    
+    .creature-list {
+        justify-content: flex-start;
+    }
+}
+.creature-filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.8rem 1.5rem;
+    border: 2px solid rgba(0, 204, 255, 0.3);
+    border-radius: 25px;
+    background: transparent;
+    color: #00ccff;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.filter-btn:hover {
+    background: rgba(0, 204, 255, 0.2);
+    border-color: #00ccff;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: #00ccff;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 204, 255, 0.3);
+}
+
+.creatures-display {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    min-height: 200px;
+}
+
+.creature-item {
+    background: rgba(0, 34, 68, 0.8);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 204, 255, 0.3);
+    text-align: center;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+}
+
+.creature-item:hover {
+    transform: translateY(-8px);
+    border-color: #00ccff;
+    box-shadow: 0 15px 40px rgba(0, 204, 255, 0.3);
+    background: rgba(0, 51, 102, 0.9);
+}
+
+.creature-item:active {
+    transform: translateY(-5px);
+}
+
+.creature-item .creature-emoji {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.creature-item h3 {
+    color: #00ccff;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.creature-danger {
+    padding: 0.3rem 1rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    display: inline-block;
+}
+
+.danger-안전 {
+    background: rgba(0, 255, 128, 0.2);
+    color: #00ff80;
+    border: 1px solid #00ff80;
+}
+
+.danger-주의 {
+    background: rgba(255, 204, 0, 0.2);
+    color: #ffcc00;
+    border: 1px solid #ffcc00;
+}
+
+.danger-위험 {
+    background: rgba(255, 153, 0, 0.2);
+    color: #ff9900;
+    border: 1px solid #ff9900;
+}
+
+.danger-극위험 {
+    background: rgba(255, 51, 51, 0.2);
+    color: #ff3333;
+    border: 1px solid #ff3333;
+}
+
+.creature-item p {
+    color: #ccffff;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+/* 펼치기/접기 기능 */
+.creature-item.hidden {
+    display: none;
+}
+
+.show-more-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.show-more-btn {
+    background: linear-gradient(45deg, #00ccff, #0099cc);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 204, 255, 0.3);
+}
+
+.show-more-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 204, 255, 0.5);
+}
+
+.show-more-btn.hidden {
+    display: none;
+}
+
+/* 생물 상세 정보 모달 */
+.creature-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.creature-modal-content {
+    background: linear-gradient(135deg, rgba(0, 34, 68, 0.95), rgba(0, 51, 102, 0.95));
+    margin: 3% auto;
+    padding: 0;
+    border: 2px solid #00ccff;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modalSlideIn 0.3s ease-out;
+    box-shadow: 0 20px 60px rgba(0, 204, 255, 0.3);
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.creature-modal-header {
+    background: rgba(0, 102, 204, 0.3);
+    padding: 1.5rem 2rem;
+    border-bottom: 2px solid rgba(0, 204, 255, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 18px 18px 0 0;
+}
+
+.creature-modal-header h2 {
+    color: #00ccff;
+    margin: 0;
+    font-size: 2rem;
+    text-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
+}
+
+.creature-modal-close {
+    color: #ccffff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    line-height: 1;
+}
+
+.creature-modal-close:hover {
+    color: #ff6600;
+    transform: scale(1.1);
+}
+
+.creature-modal-body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.creature-modal-image {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/10;
+    border-radius: 15px;
+    overflow: hidden;
+    background: rgba(0, 17, 34, 0.6);
+    border: 2px solid rgba(0, 204, 255, 0.3);
+}
+
+#modalCreatureImage,
+#modalCreatureVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 13px;
+}
+
+#modalCreatureVideo {
+    background: #000;
+}
+
+.image-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ccffff;
+    background: rgba(0, 17, 34, 0.8);
+    border-radius: 13px;
+}
+
+.image-placeholder p {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #00ccff;
+    font-weight: bold;
+}
+
+.image-placeholder small {
+    color: #99ccff;
+    font-style: italic;
+    text-align: center;
+}
+
+.creature-modal-info {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.creature-info-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.creature-modal-danger {
+    padding: 1rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid;
+}
+
+.creature-modal-type {
+    background: rgba(0, 102, 204, 0.2);
+    padding: 1rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #00ccff;
+    border: 2px solid rgba(0, 204, 255, 0.3);
+    text-align: center;
+}
+
+.creature-modal-description {
+    background: rgba(0, 17, 34, 0.4);
+    padding: 2rem;
+    border-radius: 15px;
+    line-height: 1.8;
+    font-size: 1.2rem;
+    color: #e6f7ff;
+    border: 1px solid rgba(0, 204, 255, 0.2);
+    text-align: justify;
+}
+
+/* 위험도별 색상 (모달용) */
+.creature-modal-danger.danger-안전 {
+    background: rgba(0, 255, 128, 0.2);
+    color: #00ff80;
+    border-color: #00ff80;
+}
+
+.creature-modal-danger.danger-주의 {
+    background: rgba(255, 204, 0, 0.2);
+    color: #ffcc00;
+    border-color: #ffcc00;
+}
+
+.creature-modal-danger.danger-위험 {
+    background: rgba(255, 153, 0, 0.2);
+    color: #ff9900;
+    border-color: #ff9900;
+}
+
+.creature-modal-danger.danger-극위험 {
+    background: rgba(255, 51, 51, 0.2);
+    color: #ff3333;
+    border-color: #ff3333;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .creature-modal-content {
+        width: 95%;
+        margin: 5% auto;
+    }
+    
+    .creature-modal-body {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+    
+    .creature-modal-header {
+        padding: 1rem 1.5rem;
+    }
+    
+    .creature-modal-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .creature-modal-image {
+        max-width: 100%;
+    }
+    
+    .image-placeholder {
+        padding: 3rem 1.5rem;
+        aspect-ratio: 4/3;
+    }
+    
+    .image-placeholder p {
+        font-size: 1.2rem;
+    }
+    
+    .creature-info-row {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .creature-modal-description {
+        padding: 1.5rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* 푸터 */
+footer {
+    background: rgba(0, 17, 34, 0.9);
+    color: #ccffff;
+    padding: 3rem 2rem 2rem;
+    border-top: 2px solid #00ccff;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.disclaimer {
+    background: rgba(255, 193, 7, 0.1);
+    border: 1px solid #ffc107;
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.disclaimer h3 {
+    color: #ffc107;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.disclaimer p {
+    line-height: 1.6;
+    margin: 0;
+}
+
+.purchase-info h3 {
+    color: #00ccff;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.purchase-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.purchase-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.purchase-btn:hover {
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+.purchase-btn.steam {
+    background: linear-gradient(135deg, #1b2838, #2a475e);
+    border-color: #66c0f4;
+    color: #66c0f4;
+}
+
+.purchase-btn.steam:hover {
+    box-shadow: 0 5px 15px rgba(102, 192, 244, 0.3);
+}
+
+.purchase-btn.epic {
+    background: linear-gradient(135deg, #0078f2, #00a8ff);
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.purchase-btn.epic:hover {
+    box-shadow: 0 5px 15px rgba(0, 120, 242, 0.3);
+}
+
+.purchase-btn.xbox {
+    background: linear-gradient(135deg, #107c10, #0e7a0e);
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.purchase-btn.xbox:hover {
+    box-shadow: 0 5px 15px rgba(16, 124, 16, 0.3);
+}
+
+.purchase-btn.playstation {
+    background: linear-gradient(135deg, #003087, #0070d1);
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.purchase-btn.playstation:hover {
+    box-shadow: 0 5px 15px rgba(0, 48, 135, 0.3);
+}
+
+.purchase-btn.nintendo {
+    background: linear-gradient(135deg, #e60012, #ff6b6b);
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.purchase-btn.nintendo:hover {
+    box-shadow: 0 5px 15px rgba(230, 0, 18, 0.3);
+}
+
+.purchase-btn .platform {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.purchase-btn .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.price-note {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #99ccff;
+    margin: 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(0, 204, 255, 0.3);
+}
+
+.footer-bottom p {
+    margin: 0.5rem 0;
+}
+
+.copyright-note {
+    font-size: 0.9rem;
+    color: #99ccff;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .hero-overlay h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-overlay p {
+        font-size: 1.2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 200px;
+    }
+    
+    .navigation ul {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .zones-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    main {
+        padding: 1rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .purchase-links {
+        grid-template-columns: 1fr;
+    }
+    
+    footer {
+        padding: 2rem 1rem;
+    }
+}
